@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box-Sizing, Width Properties, and Selectors</title>
+    <style>
+      .wrapper {
+        width: 400px;
+        background-color: darkkhaki;
+      }
+
+      .box {
+        color: white;
+        border: 20px solid seagreen;
+        padding: 10px;
+        background-color: blue;
+      }
+
+      p.highlight {
+        color: blue;
+      }
+
+      .container>p {
+        color: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="box">This is a box with auto width.</div>
+    </div>
+    <div class="container">
+      <p>This paragraph should be ???.</p>
+      <p class="highlight">This paragraph should be ???</p>
+    </div>
+    <ul id="menu">
+      <li>Menu Item 1</li>
+      <li>Menu Item 2</li>
+    </ul>
+    <p>Paragraph following a UL.</p>
+  </body>
+
+</html>

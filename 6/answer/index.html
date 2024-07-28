@@ -1,0 +1,85 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progressive Enhancement, Lazy Loading, and CSS Grid</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      main {
+        padding: 20px;
+        background-color: lightgray;
+      }
+
+      .grid-item {
+        background-color: lightblue;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 10px;
+        /* Fallback for browsers without CSS Grid */
+      }
+
+      .lazy-load {
+        width: 100%;
+        height: auto;
+        background: url('./spinner.svg') center center no-repeat;
+      }
+
+      @supports (display: grid) {
+        main {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 10px;
+        }
+
+        .grid-item {
+          margin-bottom: 0;
+          /* Remove fallback margin when Grid is supported */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Website</h1>
+    </header>
+    <main>
+      <div class="grid-item">
+        <img src="https://assets.codepen.io/3/kiwi.svg" srcset="./circle.svg" alt="circle ">
+      </div>
+      <div class="grid-item">
+        <svg width="100" height="100" class="lazy-load" loading="lazy">
+          <rect x="10" y="10" width="80" height="80" stroke="black" stroke-width="3" fill="blue" />
+        </svg>
+      </div>
+      <div class="grid-item">
+        <svg width="100" height="100" class="lazy-load" loading="lazy">
+          <polygon points="50,15 90,80 10,80" stroke="black" stroke-width="3" fill="green" />
+        </svg>
+      </div>
+    </main>
+  </body>
+
+</html>

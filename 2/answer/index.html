@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Elements and Structural Pseudo-Classes</title>
+    <style>
+      .content::before {
+        display: inline-block;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: aqua;
+        margin-right: 1rem;
+      }
+
+      .content::after {
+        display: inline-block;
+        content: "";
+        width: 20px;
+        height: 20px;
+        background-color: burlywood;
+        margin-left: 1rem;
+      }
+
+      .list-item:nth-child(even) {
+        background-color: lightgray;
+      }
+
+      .list-item:nth-child(3) {
+        background-color: yellow;
+        /* Added nth-child selector for third element */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content">Main Content</div>
+    <ul>
+      <li class="list-item">Item 1</li>
+      <li class="list-item">Item 2</li>
+      <li class="list-item">Item 3</li>
+      <li class="list-item">Item 4</li>
+    </ul>
+  </body>
+
+</html>

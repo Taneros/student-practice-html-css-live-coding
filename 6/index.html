@@ -1,0 +1,164 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox, Hamburger Menu, and Semantic Elements</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* Apply box-sizing globally */
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+        /* Ensure all elements use border-box */
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-toggle-label {
+        display: none;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        cursor: pointer;
+      }
+
+      .nav-toggle-label .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        background-color: white;
+        transition: all 0.3s;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: #444;
+        color: white;
+        text-align: center;
+      }
+
+      nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      nav ul li {
+        padding: 10px;
+        border-bottom: 1px solid #555;
+      }
+
+      .nav-toggle:checked+.nav-toggle-label .bar:nth-child(2) {
+        opacity: 0;
+        /* Hide the middle bar when checked */
+      }
+
+      .nav-toggle:checked+.nav-toggle-label .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        /* Cross the top bar */
+      }
+
+      .nav-toggle:checked+.nav-toggle-label .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        /* Cross the bottom bar */
+      }
+
+      .nav-toggle:checked+.nav-toggle-label+nav {
+        display: block;
+        /* Show the nav when the checkbox is checked */
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 200px;
+        height: 100vh;
+        flex-direction: column;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        /* Center items horizontally */
+        align-items: center;
+        /* Center items vertically */
+        height: 100vh;
+        /* Full height of viewport */
+      }
+
+      .item {
+        /* Style the flex items */
+      }
+
+      main {
+        background-color: lightgray;
+        padding: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .nav-toggle-label {
+          display: block;
+          /* Show the toggle label on smaller screens */
+        }
+
+        nav {
+          display: none;
+          /* Hide the nav by default on smaller screens */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>My Website</h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+      </div>
+    </main>
+  </body>
+
+</html>

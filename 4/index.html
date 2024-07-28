@@ -1,0 +1,74 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selectors and Flexbox</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        /* Apply box-sizing globally */
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+        /* Ensure all elements use border-box */
+      }
+
+      .container {
+        display: flex;
+        /* Task: Adjust the flex properties to center the items horizontally and vertically */
+        height: 100vh;
+        /* Full height of viewport */
+      }
+
+      .item {
+        background-color: lightblue;
+        padding: 20px;
+        margin: 10px;
+        border: 1px solid #333;
+        /* Task: Make flex items grow equally */
+      }
+
+      .highlight {
+        background-color: yellow;
+      }
+
+      .nested {
+        background-color: lightgreen;
+        padding: 20px;
+      }
+
+      ul>li {
+        list-style-type: none;
+        /* Task: Style the direct children of the ul element */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="item highlight">Item 1</div>
+      <div class="item">Item 2</div>
+      <div class="item">Item 3</div>
+    </div>
+    <ul>
+      <li>Item A</li>
+      <li>Item B
+        <ul>
+          <li>Nested Item B1</li>
+          <li>Nested Item B2</li>
+        </ul>
+      </li>
+      <li>Item C</li>
+    </ul>
+  </body>
+
+</html>

@@ -1,0 +1,105 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header and Visibility Management</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      header {
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+      }
+
+      .fixed-footer {
+        background-color: #555;
+        color: white;
+        padding: 10px;
+      }
+
+      .content {
+        padding: 20px;
+      }
+
+      .sticky-section {
+        background-color: lightgoldenrodyellow;
+        padding: 20px;
+      }
+
+      .hidden-element {
+        background-color: lightcoral;
+        padding: 20px;
+        margin: 10px 0;
+      }
+
+      .hidden {}
+
+      .invisible {}
+
+      .toggle-button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Landing Page</h1>
+    </header>
+    <div class="content">
+      <button class="toggle-button" onclick="toggleVisibility()">Toggle Visibility</button>
+      <div class="hidden-element hidden" id="toggleElement">
+        This element is initially hidden using `display: none`.
+      </div>
+      <div class="hidden-element invisible">
+        This element is initially hidden using `visibility: hidden`.
+      </div>
+      <section class="sticky-section">
+        This section is sticky and should stick below the header.
+      </section>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.</p>
+      <!-- Add more content to test scrolling -->
+    </div>
+    <div class="fixed-footer">
+      This is a fixed footer.
+    </div>
+    <script>
+      function toggleVisibility () {
+        const element = document.getElementById( 'toggleElement' );
+        if ( element.style.display === 'none' ) {
+          element.style.display = 'block';
+        } else {
+          element.style.display = 'none';
+        }
+      }
+    </script>
+  </body>
+
+</html>
