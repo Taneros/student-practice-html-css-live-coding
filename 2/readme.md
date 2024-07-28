@@ -15,7 +15,7 @@
 
 - Change the ::after content to read " - End".
 
-- pick only even elements using selector n-th child
+- pick only even/odd elements using selector n-th child
 - Ensure the third li element has a yellow background using the :nth-child selector.
 
 **Links**

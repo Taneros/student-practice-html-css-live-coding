@@ -14,3 +14,4 @@
 2. Implement a fixed footer that stays at the bottom of the viewport regardless of scrolling.
 3. Add a section that sticks below the header while scrolling.
 4. Create two hidden elements and use JavaScript to toggle the visibility of one element between `display: none` and `display: block`. The other element should be hidden using `visibility: hidden`.
+ 
